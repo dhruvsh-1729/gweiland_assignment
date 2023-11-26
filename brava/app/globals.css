@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'autumn';
+  src: url('./../assets/Adlery-Pro-trial.ttf');
+  font-weight: 400;
+  font-style: normal;
+  }
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.slide {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Change the last value to adjust opacity */
+}
+
+/*// Add the following styles to your CSS or inline styles in your component*/
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.custom-carousel {
+  display: flex;
+  width: 100vw; /* Full viewport width */
+  height: 65vh;
+  position: relative;
+}
+
+.slides {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  object-fit: cover;
+  object-position: 50% 0%; /* Center horizontally, crop from the top */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  padding: 20px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2); /* Adjust the overlay color and opacity as needed */
+}
+
+.card--shop-now{
+  bottom: 0px;
+  color: white;
+  text-decoration: underline;
+  margin-top: 30px;
+  font-size: 15px;
+  text-align: end;
+  font-weight: 500;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5); /* Adjust the button background color and opacity as needed */
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.next {
+  right: 0;
+}
+
+.thb-tem{
+    position: relative;
+  }
+
+.thb-item-count{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 26px;
+    left: 13px;
+    font-size: 10px;
+  }
+
+  
+  .thb-tem:hover .thb-item-count {
+    background-color: yellow;
+  }
+
+.underline-text {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+.underline-text:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: -5px;
+  background: #000;
+  height: 4px;
+  transition-property: left right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.underline-text:hover:after,
+.underline-text:focus:after,
+.underline-text:active:after {
+  right: 0;
+}
+
+
+.shop--now-button {
+  position: relative;
+  padding: 15px 30px;
+  border-radius: 50px;
+  background-color: white;
+  color: black;
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.shop--now-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transition: transform 0.3s;
+  transform: translateY(100%);
+  z-index: -1; /* Ensure the pseudo-element is behind the text */
+}
+
+.shop--now-button:hover::before {
+  transform: translateY(0);
+}
+
+.shop--now-button:hover {
+  color: white;
+  z-index: 1; /* Ensure the text is on top when hovered */
+}
